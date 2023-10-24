@@ -1,0 +1,29 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.mp4|\.webm|\.ogg|\.ico|\.ttf|\.woff|\.woff2|\.webp|\.jpeg|\.zip|\.css|\.svg|\.js)$
+RewriteRule (.*) routes.php [QSA,L]
+
+# Server can play audio
+# MP3 audio
+#AddType audio/mpeg3 .mp3
+#AddType audio/mp3 .mp3
+#AddType audio/x-mpeg3 .mp3
+
+# Ogg Vorbis audio
+#AddType audio/ogg .ogg
+#AddType audio/ogg .oga
+
+# Server can play video
+# Ogg Theora video
+#AddType video/ogg .ogv
+AddType video/ogg .ogg
+
+# MP4 video
+AddType video/mp4 .mp4
+
+# Webm video
+AddType video/webm .webm
+
+#Header add Access-Control-Allow-Origin "*"
+#Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+#Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+
